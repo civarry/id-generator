@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Register Form{% endblock %}
+
+{% block content %}
+<div class="my-cont">
+    <div class="form-box">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <div class="text-center">
+                <button class="btn btn-primary" type="submit">Create</button>
+            </div>
+        </form>
+</div>
+</div>
+{% endblock %}

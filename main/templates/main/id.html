@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+{% load thumbnail %}
+{% load static %}
+
+
+{% block title %}Identification{% endblock %}
+
+{% block content %}
+    <div class="my-cont">
+        {% for i in data %}
+        <div class="wrapper">
+            <div class="pos-btn-con">
+                <div class="btn-pos-1">
+                    <a class="btn-a" href="delete/{{ i.id }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </div>
+                <div class="btn-pos-2">
+                    <a class="btn-a"><i class="fa fa-download" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="card-box">
+                <div class="title-box">
+                    <div class="main-title">
+                        <strong>PROGRAMMERS</strong>
+                    </div>
+                    <div class="sub-title">
+                        <strong>IDENTIFICATION</strong>
+                    </div>
+                    <div class="flex-container">
+                        <div class="left">
+                            <img src="{{ i.image|thumbnail_url:'avatar' }}" alt="hello">
+                        </div>
+                        <div class="right">
+                            <div class="detail-container">
+                                <small>Last Name, First Name</small>
+                            </div>
+                            <div class="detail-container">
+                                    <b>{{i.last_name|upper}},&nbsp;</b> <em> {{i.first_name|upper}}</em>
+                            </div>
+                            <div class="detail-container">
+                                <div class="item1">Sex</div>
+                                <div class="item2">Date of Birth</div>
+                                <div class="item3">Civil Status</div>
+                            </div>
+                            <div class="detail-container">
+                                <div class="item1"><b>{{i.gender}}</b></div>
+                                <div class="item2"><b>{{i.date_of_birth}}</b></div>
+                                <div class="item3"><b>{{i.civil_status}}</b></div>
+                            </div>
+                            <div class="detail-container">
+                                <div class="item1">Blood Type</div>
+                                <div class="item2">Date Issued</div>
+                                <div class="item3">Valid Until</div>
+                            </div>
+                            <div class="detail-container">
+                                <div class="item1"><b>{{i.blood_type}}</b></div>
+                                <div class="item2"><b>{{i.date_issued}}</b></div>
+                                <div class="item3"><b>{{i.validity}}</b></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <b>Qoute/Motto</b>
+                </div>
+                <div class="motto-container">
+                    <em>"{{i.motto}}"</em>
+                </div>
+            </div>
+        </div>
+                
+        {% endfor %}
+    </div>
+{% endblock %}
