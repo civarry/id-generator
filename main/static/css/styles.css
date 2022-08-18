@@ -138,7 +138,7 @@ a:hover{
 .form-box{
     padding: 10px;
     margin: 0 auto;
-    height: 460px;
+    height: auto;
     width: 533.33px;
     background-color: #fff;
     background-size: cover;
@@ -166,7 +166,18 @@ a:hover{
     flex: 50%;
 }
 @media (min-width: 414px) and (max-width: 900px){
-    .container{
+    .navbar{
         width: 100%;
+    }
+    .my-cont{
+        width: 100%;
+    }
+    .card-box{
+        margin: 0 auto;
+    }
+    .form-box{
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
     }
 }
